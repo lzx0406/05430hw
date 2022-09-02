@@ -1,0 +1,68 @@
+/* logo */
+.logo {
+    width: 200px;
+    height:200px;
+}
+
+/* some general css */
+body{
+    font-family:serif;
+}
+
+.nav{
+    text-align:center;
+}
+
+.handmade{
+    text-align:center;
+}
+
+/* hard coding products section */
+.products{
+    background-color:rgb(255, 255, 255);
+    width:200px;
+    height:300px;
+    line-height: .06;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.original{
+    width:200px;
+    height: 270px;
+}
+
+.apple{
+    width:200px;
+    height: 270px;
+}
+
+.raisin{
+    width:200px;
+    height: 270px;
+}
+
+.walnut{
+    width:200px;
+    height: 270px;
+}
+
+.double{
+    width:200px;
+    height: 290px;
+}
+
+.strawberry{
+    width:200px;
+    height: 270px;
+}
+
+.product_img{
+    display: block;
+    width:200px;
+    height:200px;
+    margin-left:auto;
+    margin-right:auto;
+    border: 3px solid #000000;
+}
+
