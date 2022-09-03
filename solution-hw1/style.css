@@ -1,87 +1,114 @@
 /* logo */
 .logo {
-    width: 300px;
-    height:200px;
+    width:450px;
+    height:300px;
 }
 
 /* some general css */
 body{
-    font-family:serif;
+    font-family:sans-serif;
+    font-size:25px;
 }
 
-.nav{
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+.nav1{
     text-align:center;
+    width:150px;
+    margin:auto;
+    font-size:25px;
+    line-height: 1.5;
+}
+.nav1:hover {
+    background: yellow;
+}
+.nav2{
+    text-align:center;
+    width:100px;
+    font-size:25px;
+    margin:auto;
+}
+.nav2:hover {
+    background: yellow;
+}
+
+.break{
+    height:5px;
+    background:#000000;
 }
 
 .topic{
     text-align:center;
-    font-size:20px;
+    font-size:27px;
 }
 
 /* hard coding products section */
 .products{
     background-color:rgb(255, 255, 255);
-    width:200px;
+    width:300px;
     height:300px;
     line-height: .06;
     margin:auto;
 }
 
 .original{
-    width:205px;
-    height: 250px;
+    width:305px;
+    height: 380px;
     padding: 5px;
-    margin-bottom:20px;
+    margin-bottom:30px;
 }
 .original:hover {
     background: yellow;
 }
 
 .apple{
-    width:205px;
-    height: 250px;
+    width:305px;
+    height: 380px;
     padding: 5px;
-    margin-bottom:20px;
+    margin-bottom:30px;
 }
 .apple:hover {
     background: yellow;
 }
 
 .raisin{
-    width:205px;
-    height: 250px;
+    width:305px;
+    height: 380px;
     padding: 5px;
-    margin-bottom:20px;
+    margin-bottom:30px;
 }
 .raisin:hover {
     background: yellow;
 }
 
 .walnut{
-    width:205px;
-    height: 250px;
+    width:305px;
+    height: 380px;
     padding: 5px;
-    margin-bottom:20px;
+    margin-bottom:30px;
 }
 .walnut:hover {
     background: yellow;
 }
 
 .double{
-    width:205px;
-    height: 260px;
+    width:305px;
+    height: 410px;
     padding: 5px;
-    margin-bottom:20px;
+    margin-bottom:30px;
 }
 .double:hover {
     background: yellow;
 }
 
 .strawberry{
-    width:205px;
-    height: 250px;
+    width:305px;
+    height: 380px;
     padding: 5px;
-    margin-bottom:20px;
+    margin-bottom:30px;
 }
 .strawberry:hover {
     background: yellow;
@@ -89,8 +116,8 @@ body{
 
 .product_img{
     display: block;
-    width:200px;
-    height:200px;
+    width:300px;
+    height:300px;
     margin-left:auto;
     margin-right:auto;
     border: 3px solid #000000;
@@ -99,8 +126,8 @@ body{
 /* css for detail page */
 .detail_img{
     display: block;
-    width:400px;
-    height:400px;
+    width:600px;
+    height:600px;
     margin-left:auto;
     margin-right:auto;
     border: 3px solid #000000;
@@ -108,27 +135,43 @@ body{
 
 
 #select{
-    width:200px;
+    width:310px;
     height:400px;
     line-height: .06;
     margin-left:auto;
     margin-right:auto;
-    /*background:#ecafaf;*/
+    font-size:25px;
+}
+
+.choose{
+    width:280px;
+    height:40px;
+    border:3px solid #000000;
+    font-size:20px;
 }
 
 .add{
     background:yellow;
+    font-size:20px;
+    width: 150px;
+    height:40px;
+    border:3px solid #000000;
 }
 
 /* css for cart page */
 .cart{
     display: block;
     text-align:center;
-    width:300px;
-    height:600px;
+    width:500px;
+    height:700px;
     margin-left:auto;
     margin-right:auto;
     line-height: .06;
+}
+
+.remove{
+    font-size:15px;
+    line-height: 1.5;
 }
 
 .cart_img{
@@ -141,13 +184,17 @@ body{
 }
 
 .price{
-    font-size:18px;
-    line-height:1.5;
+    font-size:27px;
+    line-height:2;
 }
 
 .checkout{
     display: block;
     margin-left:auto;
     margin-right:auto;
+    font-size:23px;
+    font:bold;
+    width:150px;
+    height:45px;
     background:yellow;
 }

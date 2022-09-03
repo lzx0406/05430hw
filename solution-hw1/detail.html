@@ -8,19 +8,22 @@
 
       <body>
         <a href="index.html"><img src="assets/logo/logo-01.svg" class="logo"/></a>
-        <hr>
-        <div class="nav">
+        <hr class="break">
+        <div class="nav1">
           <a href="index.html">PRODUCTS</a><br>
-          <a href="cart.html">CART</a>
+        </div>
+        <div class="nav2">
+            <a href="cart.html">CART</a>
         </div>
 
+        <p></p><br>
         <p class="topic">Original cinnamon roll</p>
         <img src="assets/products/original-cinnamon-roll.jpg" class="detail_img"/>
 
         <div id="select">
           <p class="customize">Customize our delicious,</p>
           <p class="customize">hand-made cinnamon roll to</p>
-          <p class="customize">your liking.</p>
+          <p class="customize">your liking!</p>
           <br>
           <p></p><br>
           <p></p>
@@ -28,7 +31,7 @@
           <form target="_blank" method="POST" action="/cart.html">
             <label for="glazing">Glazing:</label>
             <p> </p>
-            <select name="glazing" id="glazing">
+            <select name="glazing" class="choose">
               <option value="original">Keep Original</option>
               <option value="sugar">Sugar milk</option>
               <option value="vanilla">Vanilla milk</option>
@@ -38,9 +41,9 @@
             <p></p>
 
             <label for="size">Pack size:</label>
-            <p> </p>
-            <select name="size" id="size">
-              <p> </p>
+            <p></p>
+            <select name="size" class="choose">
+              <p></p>
               <br>
               <option value="1">1</option>
               <option value="3">3</option>
@@ -50,7 +53,7 @@
 
             <p></p><br>
             <p></p><br>
-            <p>$2.49 &nbsp&nbsp <input type="submit" value="Add to cart" class="add"></p>
+            <p>&nbsp&nbsp $2.49 &nbsp&nbsp&nbsp&nbsp <button onclick="document.location = 'cart.html'" class="add">Add to Cart</button></p>
           </form>
 
         </div>
