@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
     <head>
         <title>PUI HW1</title>
-        <link rel="stylesheet" href = "style.css"/>
+        <link rel="stylesheet" href = "css/style.css"/>
       </head>
 
       <body>
-        <a href="index.html"><img src="assets/logo/logo-01.svg" class="logo"/></a>
+        <a href="index.html"><img src="assets/logo/logo-01.svg" alt="logo picture" class="logo"/></a>
         <hr class="break">
         <div class="nav1">
           <a href="index.html">PRODUCTS</a><br>
@@ -18,7 +18,7 @@
 
         <p></p><br>
         <p class="topic">Original cinnamon roll</p>
-        <img src="assets/products/original-cinnamon-roll.jpg" class="detail_img"/>
+        <img src="assets/products/original-cinnamon-roll.jpg" alt="original cinnamon roll" class="detail_img"/>
 
         <div id="select">
           <p class="customize">Customize our delicious,</p>
@@ -31,7 +31,7 @@
           <form target="_blank" method="POST" action="/cart.html">
             <label for="glazing">Glazing:</label>
             <p> </p>
-            <select name="glazing" class="choose">
+            <select name="glazing" id="glazing" class="choose">
               <option value="original">Keep Original</option>
               <option value="sugar">Sugar milk</option>
               <option value="vanilla">Vanilla milk</option>
@@ -42,9 +42,7 @@
 
             <label for="size">Pack size:</label>
             <p></p>
-            <select name="size" class="choose">
-              <p></p>
-              <br>
+            <select name="size" id="size" class="choose">
               <option value="1">1</option>
               <option value="3">3</option>
               <option value="6">6</option>
@@ -53,7 +51,7 @@
 
             <p></p><br>
             <p></p><br>
-            <p>&nbsp&nbsp $2.49 &nbsp&nbsp&nbsp&nbsp <button onclick="document.location = 'cart.html'" class="add">Add to Cart</button></p>
+            <p>&nbsp;&nbsp; $2.49 &nbsp;&nbsp;&nbsp;&nbsp; <button onclick="document.location = 'cart.html'" class="add">Add to Cart</button></p>
           </form>
 
         </div>
