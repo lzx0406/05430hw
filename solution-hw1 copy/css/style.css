@@ -1,13 +1,16 @@
 /* logo */
 .logo {
     width:450px;
-    height:300px;
+    height:280px;
+    padding:40px;
+    box-sizing:border-box;
 }
 
 /* some general css */
 body{
     font-family:sans-serif;
     font-size:25px;
+    margin:0px;
 }
 
 a:hover, a:visited, a:link, a:active
@@ -15,12 +18,23 @@ a:hover, a:visited, a:link, a:active
     text-decoration: none;
 }
 
+.nav{
+    display:flex;
+}
+
+.nav-right{
+    flex: 1 0 auto;
+}
+
+.nav12{
+    display:flex;
+}
+
 .nav1{
     text-align:center;
     width:150px;
-    margin:auto;
+    margin: 45px 40px 30px 390px;
     font-size:25px;
-    line-height: 1.5;
     color:#000000;
 }
 .nav1:hover, .nav1:visited, .nav1:link, .nav1:active {
@@ -32,7 +46,7 @@ a:hover, a:visited, a:link, a:active
     text-align:center;
     width:100px;
     font-size:25px;
-    margin:auto;
+    margin: 45px 10px 30px 10px;
     color:#000000;
 }
 .nav2:hover, .nav2:visited, .nav2:link, .nav2:active{
@@ -47,7 +61,7 @@ a:hover, a:visited, a:link, a:active
 }
 
 .topic{
-    text-align:center;
+    margin-top:10px;
     font-size:32px;
 }
 
@@ -57,14 +71,21 @@ a:hover, a:visited, a:link, a:active
     width:300px;
     height:300px;
     line-height: .06;
-    margin:auto;
+    margin:10px 10px 10px 70px;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.line1{
+    display:flex;
 }
 
 .original{
     width:305px;
     height: 380px;
     padding: 5px;
-    margin-bottom:30px;
+    margin:10px 20px 30px 20px;
 }
 .original:hover {
     background: yellow;
@@ -74,7 +95,7 @@ a:hover, a:visited, a:link, a:active
     width:305px;
     height: 380px;
     padding: 5px;
-    margin-bottom:30px;
+    margin:10px 20px 30px 20px;
 }
 .apple:hover {
     background: yellow;
@@ -84,7 +105,7 @@ a:hover, a:visited, a:link, a:active
     width:305px;
     height: 380px;
     padding: 5px;
-    margin-bottom:30px;
+    margin:10px 20px 30px 20px;
 }
 .raisin:hover {
     background: yellow;
@@ -94,7 +115,7 @@ a:hover, a:visited, a:link, a:active
     width:305px;
     height: 380px;
     padding: 5px;
-    margin-bottom:30px;
+    margin:10px 20px 30px 20px;
 }
 .walnut:hover {
     background: yellow;
@@ -104,7 +125,7 @@ a:hover, a:visited, a:link, a:active
     width:305px;
     height: 410px;
     padding: 5px;
-    margin-bottom:30px;
+    margin:10px 20px 30px 20px;
 }
 .double:hover {
     background: yellow;
@@ -114,7 +135,7 @@ a:hover, a:visited, a:link, a:active
     width:305px;
     height: 380px;
     padding: 5px;
-    margin-bottom:30px;
+    margin:10px 20px 30px 20px;
 }
 .strawberry:hover {
     background: yellow;
@@ -135,16 +156,19 @@ a:hover, a:visited, a:link, a:active
     width:600px;
     height:600px;
     margin-left:auto;
-    margin-right:auto;
+    margin-right:30px;
     border: 3px solid #000000;
 }
 
+#original-roll-detail{
+    display:flex;
+}
 
 #select{
     width:310px;
     height:400px;
     line-height: .06;
-    margin-left:auto;
+    margin: 20px 20px 50px 30px;
     margin-right:auto;
     font-size:25px;
 }
@@ -167,31 +191,42 @@ a:hover, a:visited, a:link, a:active
 /* css for cart page */
 .cart{
     display: block;
-    text-align:center;
+    text-align:left;
     width:700px;
     height:700px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left:450px;
+    margin-right:0px;
     line-height: .06;
 }
 
+.cart-line{
+    display:flex;
+}
+
+.cart-description{
+    text-align:left;
+    margin: 30px 140px 20px 40px;
+}
+
 .remove{
-    font-size:20px;
-    line-height: 1.5;
+    font-size:15px;
+    line-height: 0.5;
+    text-align:left;
 }
 
 .cart_img{
-    width:150px;
-    height:150px;
+    width:140px;
+    height:140px;
     border: 3px solid #000000;
     display: block;
-    margin-left:auto;
-    margin-right:auto;
+    margin: 10px 0px 20px 0px;
+    text-align:left;
 }
 
 .price{
-    font-size:27px;
+    font-size:28px;
     line-height:2;
+    margin: 30px 10px 20px 10px;
 }
 
 .checkout{
