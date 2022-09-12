@@ -1,24 +1,6 @@
 /* logo */
 .logo {
     width:450px;
-    height:300px;
-}
-
-/* some general css */
-body{
-    font-family:sans-serif;
-    font-size:25px;
-}
-
-a:hover, a:visited, a:link, a:active
-{
-    text-decoration: none;
-}
-
-/* logo */
-.logo {
-    width:450px;
-    height:300px;
     height:280px;
     padding:40px;
     box-sizing:border-box;
@@ -31,7 +13,8 @@ body{
     margin:0px;
 }
 
-a:hover, a:visited, a:link, a:active {
+a:hover, a:visited, a:link, a:active
+{
     text-decoration: none;
 }
 
@@ -50,36 +33,45 @@ a:hover, a:visited, a:link, a:active {
 .nav1{
     text-align:center;
     width:150px;
-    margin:auto;
     margin: 45px 40px 30px 390px;
     font-size:25px;
-    line-height: 1.5;
     color:#000000;
 }
 .nav1:hover, .nav1:visited, .nav1:link, .nav1:active {
+    background: yellow;
+    font-weight:bold;
+    color:#000000;
+}
+.nav2{
     text-align:center;
     width:100px;
     font-size:25px;
-    margin:auto;
     margin: 45px 10px 30px 10px;
     color:#000000;
 }
-/* .nav2:hover, .nav2:visited, .nav2:link, .nav2:active{
-@ -47,7 +61,7 @@ a:hover, a:visited, a:link, a:active
-} */
+
+.nav2:hover, .nav2:visited, .nav2:link, .nav2:active{
+    background: yellow;
+    font-weight:bold;
+    color:#000000;
+    }
+
+.break{
+    height:5px;
+    background:#000000;
+}
 
 .topic{
-    text-align:center;
     margin-top:10px;
     font-size:32px;
 }
 
+/* hard coding products section */
 .products{
     background-color:rgb(255, 255, 255);
     width:300px;
     height:300px;
     line-height: .06;
-    margin:auto;
     margin:10px 10px 10px 70px;
 
     display:flex;
@@ -94,55 +86,77 @@ a:hover, a:visited, a:link, a:active {
     width:305px;
     height: 380px;
     padding: 5px;
-    margin-bottom:30px;
     margin:10px 20px 30px 20px;
 }
 .original:hover {
     background: yellow;
+}
+
+.apple{
     width:305px;
     height: 380px;
     padding: 5px;
-    margin-bottom:30px;
     margin:10px 20px 30px 20px;
 }
 .apple:hover {
     background: yellow;
+}
+
+.raisin{
     width:305px;
     height: 380px;
     padding: 5px;
-    margin-bottom:30px;
     margin:10px 20px 30px 20px;
 }
 .raisin:hover {
     background: yellow;
+}
+
+.walnut{
     width:305px;
     height: 380px;
     padding: 5px;
-    margin-bottom:30px;
     margin:10px 20px 30px 20px;
 }
 .walnut:hover {
     background: yellow;
+}
+
+.double{
     width:305px;
     height: 410px;
     padding: 5px;
-    margin-bottom:30px;
     margin:10px 20px 30px 20px;
 }
 .double:hover {
     background: yellow;
+}
+
+.strawberry{
     width:305px;
     height: 380px;
     padding: 5px;
-    margin-bottom:30px;
     margin:10px 20px 30px 20px;
 }
 .strawberry:hover {
     background: yellow;
+}
+
+.product_img{
+    display: block;
+    width:300px;
+    height:300px;
+    margin-left:auto;
+    margin-right:auto;
+    border: 3px solid #000000;
+}
+
+/* css for detail page */
+.detail_img{
+    display: block;
     width:600px;
     height:600px;
     margin-left:auto;
-    margin-right:auto;
     margin-right:30px;
     border: 3px solid #000000;
 }
@@ -155,10 +169,24 @@ a:hover, a:visited, a:link, a:active {
     width:310px;
     height:400px;
     line-height: .06;
-    margin-left:auto;
     margin: 20px 20px 50px 30px;
     margin-right:auto;
     font-size:25px;
+}
+
+.choose{
+    width:280px;
+    height:40px;
+    border:3px solid #000000;
+    font-size:20px;
+}
+
+.add{
+    background:yellow;
+    font-size:20px;
+    width: 150px;
+    height:40px;
+    border:3px solid #000000;
 }
 
 /* css for cart page */
