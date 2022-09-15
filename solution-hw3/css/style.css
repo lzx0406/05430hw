@@ -165,7 +165,7 @@ a:hover, a:visited, a:link, a:active
     display:flex;
 }
 
-#glazingOptions{
+#selection{
     width:310px;
     height:400px;
     line-height: .06;
@@ -225,6 +225,24 @@ a:hover, a:visited, a:link, a:active
     text-align:left;
 }
 
+.item_total{
+    display: flex;
+    overflow:auto;
+} 
+
+#item_price{
+    width: 50px;
+    margin-left: 30px;
+    margin-right: 50px;
+    margin-top: 25px;
+}
+
+#item_add{
+    flex: 0 1 auto;
+    margin-top: 5px;
+}
+
+/* css for checkout page */
 .price{
     font-size:27px;
     line-height:2;
