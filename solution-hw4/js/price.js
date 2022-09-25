@@ -1,3 +1,24 @@
+// Populating the detial page with customized info
+const queryString = window.location.search;
+console.log(queryString);
+const params = new URLSearchParams(queryString);
+console.log(params);
+const rollType = params.get('roll');
+console.log(rollType);
+
+// Initialize the image
+const rollImage = document.querySelector('#roll-detail-img');
+rollImage.src = 'assets/products/' + rolls[rollType].imageFile;
+
+// Initialize the title
+const detailTitle = document.querySelector('#detail-topic');
+detailTitle.innerText = rollType + ' Cinnamon Roll';
+
+// Initialize the price
+const detailBasePrice = document.querySelector('#item_price');
+detailBasePrice.innerText = "$" + rolls[rollType].basePrice;
+
+
 // Initializing the dropdown
 class Glazing {
   value;
@@ -41,14 +62,18 @@ for(var i = 0; i < allPack.length; i++) {
 
 // All other functions calculating new cost
 let current = {
-  base: Number(2.49),
+  base: Number(rolls[rollType].basePrice),
   glazing: Number(0),
-  pack: Number(1)
+  glazingText: "Keep Original",
+  pack: Number(0),
+  packDisplay: '1'
 };
 
 function glazingChange(element) {
   const glazeChange = element.value;
   current.glazing = glazeChange;
+  const glazeName = element.text;
+  current.glazingText = glazeName;
 
   current.element = document.querySelector('#item_price');
   const newP = (parseFloat(current.base) + parseFloat(current.glazing)) * parseFloat(current.pack);
@@ -59,9 +84,35 @@ function glazingChange(element) {
 function packChange(element) {
   const packChange = element.value;
   current.pack = packChange;
+  const packName = element.text;
+  current.packDisplay = packName;
 
   current.element = document.querySelector('#item_price');
   const newP = (parseFloat(current.base) + parseFloat(current.glazing)) * parseFloat(current.pack);
   console.log("new price is " + newP);
   current.element.innerText = "$" + newP.toFixed(2); 
   }
+
+
+// Initializing cart array
+let cart = []
+// Initializing the Roll class for adding to cart
+class Roll {
+  constructor(rollType, rollGlazing, packSize, basePrice) {
+  this.type = rollType;
+  this.glazing = rollGlazing;
+  this.size = packSize;
+  this.basePrice = basePrice;
+  }
+}
+
+function addToCart(){
+  let newItem = new Roll(
+    rollType,
+    current.glazingText,
+    current.pack,
+    current.base
+  );
+  cart.push(newItem);
+  console.log(cart);
+}
