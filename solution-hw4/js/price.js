@@ -65,7 +65,7 @@ let current = {
   base: Number(rolls[rollType].basePrice),
   glazing: Number(0),
   glazingText: "Keep Original",
-  pack: Number(0),
+  pack: Number(1),
   packDisplay: '1'
 };
 
@@ -84,7 +84,7 @@ function glazingChange(element) {
 function packChange(element) {
   const packChange = element.value;
   current.pack = packChange;
-  const packName = element.text;
+  const packName = element.options[element.selectedIndex].text;
   current.packDisplay = packName;
 
   current.element = document.querySelector('#item_price');
@@ -110,7 +110,7 @@ function addToCart(){
   let newItem = new Roll(
     rollType,
     current.glazingText,
-    current.pack,
+    current.packDisplay,
     current.base
   );
   cart.push(newItem);

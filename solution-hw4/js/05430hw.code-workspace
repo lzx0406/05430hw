@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../puinote-start"
+		},
+		{
+			"path": "../../../teach-pui"
+		},
+		{
+			"path": "../../../url-params"
+		},
+		{
+			"path": "../../../22F-05430/lab-03"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "url-params"
+	}
+}
