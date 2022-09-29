@@ -72,7 +72,7 @@ let current = {
 function glazingChange(element) {
   const glazeChange = element.value;
   current.glazing = glazeChange;
-  const glazeName = element.text;
+  const glazeName = element.options[element.selectedIndex].text;
   current.glazingText = glazeName;
 
   current.element = document.querySelector('#item_price');
