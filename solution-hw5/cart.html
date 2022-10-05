@@ -4,6 +4,8 @@
     <head>
       <title>PUI HW5</title>
       <link rel="stylesheet" href = "css/style.css"/>
+      <script defer src="js/rollsData.js"></script>
+      <script defer src="js/price.js"></script>
     </head>
 
     <body>
@@ -22,39 +24,26 @@
             <p></p><br>
             <p class="topic">Shopping Cart</p>
         </div>
-    </div>
+      </div>
 
       <div class="cart">
 
-        <div class="cart-line">
-          <div class="cart-pic">
-            <img src="assets/products/original-cinnamon-roll.jpg" alt="original cinnamon roll picture" class="cart_img"/>
-            <a href="" class="remove">Remove</a>
+        <template id="var-cart">
+          <div class="cart-line">
+            <div class="cart-pic">
+              <img src=" " alt="double chocolate cinnamon roll picture" class="cart_img" id="cart_img_id"/>
+              <a href="" class="remove">Remove</a>
+            </div>
+  
+            <div class="cart-description">
+              <p id="cart-item-name">Double Chocolate Cinnamon Roll</p>
+              <p id="cart-glazing">Glazing: Sugar milk</p>
+              <p id="cart-pack-size">Pack size: 6</p>
+            </div>
+  
+            <p class="price" id="cart-item-price">$27.45</p>
           </div>
-
-          <div class="cart-description">
-            <p>Original Cinnamon Roll</p>
-            <p>Glazing: Keep original</p>
-            <p>Pack size: 1</p>
-          </div>
-          
-          <p class="price">$2.49</p>
-        </div>
-
-        <div class="cart-line">
-          <div class="cart-pic">
-            <img src="assets/products/double-chocolate-cinnamon-roll.jpg" alt="double chocolate cinnamon roll picture" class="cart_img"/>
-            <a href="" class="remove">Remove</a>
-          </div>
-
-          <div class="cart-description">
-            <p>Double Chocolate Cinnamon Roll</p>
-            <p>Glazing: Sugar milk</p>
-            <p>Pack size: 6</p>
-          </div>
-
-          <p class="price">$27.45</p>
-        </div>
+        </template>
 
         <hr class="break">
         <div class="total-both">
@@ -62,6 +51,7 @@
           <p id="total2">$29.94</p>
         </div>
         <input type="submit" value="Checkout" class="checkout">
+
       </div>
 
     </body>
