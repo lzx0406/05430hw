@@ -128,6 +128,7 @@ function addToCart(){
   console.log(cart);
 }
 
+//Initialize the cart set and init all the four rolls
 let curCart = new Set();
 let initApple = new Roll("Apple", 
     allGlazing[0], 
@@ -153,6 +154,7 @@ let initOriginal = new Roll("Original",
     rolls["Original"].basePrice);
 curCart.add(initOriginal);
 
+//Function to initialize each one of the roll
 function initCart(newRoll){
   let template = document.querySelector("#var-cart");
   if (template != null) {
@@ -182,6 +184,7 @@ function initCart(newRoll){
   }
 }
 
+//Function to recalculate the total price whenever called
 function updateTotalPrice(){
   let totalPrice = 0;
   for (let item of curCart){
@@ -195,6 +198,7 @@ function updateTotalPrice(){
   
 }
 
+//Function to remove item and update total price
 function removeItem(event, item, element){
   event.preventDefault();
   if (curCart.size > 0){
@@ -205,6 +209,7 @@ function removeItem(event, item, element){
   updateTotalPrice();
 }
 
+//Initialize the cart
 for (let item of curCart) {
   initCart(item);
 }
