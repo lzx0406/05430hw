@@ -88,7 +88,6 @@ function glazingChange(element) {
 
   current.element = document.querySelector('#item_price');
   const newP = (parseFloat(current.base) + parseFloat(current.glazing)) * parseFloat(current.pack);
-  console.log("new price is " + newP);
   current.element.innerText = "$" + newP.toFixed(2); 
   }
 
@@ -100,13 +99,51 @@ function packChange(element) {
 
   current.element = document.querySelector('#item_price');
   const newP = (parseFloat(current.base) + parseFloat(current.glazing)) * parseFloat(current.pack);
-  console.log("new price is " + newP);
   current.element.innerText = "$" + newP.toFixed(2); 
   }
 
 
+// Initialize the curCart set for cart page
+let curCart = new Set();
+
+// Local storage save and retrieve function
+function saveToLocalStorage(){
+  let cartArray = Array.from(cart);
+  let cartJSON = JSON.stringify(cartArray);
+
+  localStorage.setItem('storedCart', cartJSON);
+  console.log("Printing the cart in local storage after saving: ");
+  console.log(cartJSON);
+}
+
+function retrieveFromLocalStorage(){
+  let cartJSON = localStorage.getItem('storedCart');
+
+  if(cartJSON == null){
+    return 0;
+  }
+
+  let cart = JSON.parse(cartJSON);
+
+  for (let oneItem of cart){
+    curCart.add(oneItem);
+  }
+  return cart;
+}
+
 // Initializing cart array
-let cart = []
+function initCartArr(){
+  let tmp = retrieveFromLocalStorage();
+  if (tmp == 0) {
+    return [];
+  }
+  return tmp;
+}
+
+let cart = initCartArr();
+console.log("following is cart!!!!!!!!!!!!!!!!!");
+console.log(cart);
+
 // Initializing the Roll class for adding to cart
 class Roll {
   constructor(rollType, rollGlazing, packSize, basePrice) {
@@ -126,33 +163,23 @@ function addToCart(){
   );
   cart.push(newItem);
   console.log(cart);
+  saveToLocalStorage();
 }
 
-//Initialize the cart set and init all the four rolls
-let curCart = new Set();
-let initApple = new Roll("Apple", 
-    allGlazing[0], 
-    allPack[1],
-    rolls["Apple"].basePrice);
-curCart.add(initApple);
 
-let initRaisin = new Roll("Raisin", 
-    allGlazing[1], 
-    allPack[1],
-    rolls["Raisin"].basePrice);
-curCart.add(initRaisin);
+// Functions to convert names of glazing and pack size to value for calculation
+function glazingTextToPrice(text){
+  if (text == "Keep Original" || text == "Sugar milk"){ return 0; }
+  if (text == "Vanilla milk") {return 0.5; }
+  else return 1.5;
+}
 
-let initWalnut = new Roll("Walnut", 
-    allGlazing[2], 
-    allPack[3],
-    rolls["Walnut"].basePrice);
-curCart.add(initWalnut);
-
-let initOriginal = new Roll("Original", 
-    allGlazing[1], 
-    allPack[0],
-    rolls["Original"].basePrice);
-curCart.add(initOriginal);
+function packTextToValue(text){
+  if (text == "1") return 1;
+  if (text == "3") return 3;
+  if (text == "6") return 5;
+  else return 10;
+}
 
 //Function to initialize each one of the roll
 function initCart(newRoll){
@@ -173,12 +200,12 @@ function initCart(newRoll){
     CartItemName.innerText = newRoll.type + " Cinnamon Roll";
 
     let CartGlazing = element.querySelector('#cart-glazing');
-    CartGlazing.innerText = "Glazing: " + newRoll.glazing.text;
+    CartGlazing.innerText = "Glazing: " + newRoll.glazing;
 
     let CartPack = element.querySelector('#cart-pack-size');
-    CartPack.innerText = "Pack size: " + newRoll.size.text;
+    CartPack.innerText = "Pack size: " + newRoll.size;
 
-    const newP = (parseFloat(newRoll.basePrice) + parseFloat(newRoll.glazing.value)) * parseFloat(newRoll.size.value);
+    const newP = (parseFloat(newRoll.basePrice) + parseFloat(glazingTextToPrice(newRoll.glazing))) * parseFloat(packTextToValue(newRoll.size));
     let CartPrice = element.querySelector('#cart-item-price');
     CartPrice.innerText = "$" + newP.toFixed(2);
   }
@@ -188,7 +215,7 @@ function initCart(newRoll){
 function updateTotalPrice(){
   let totalPrice = 0;
   for (let item of curCart){
-    const oneP = (parseFloat(item.basePrice) + parseFloat(item.glazing.value)) * parseFloat(item.size.value);
+    const oneP = (parseFloat(item.basePrice) + parseFloat(glazingTextToPrice(item.glazing))) * parseFloat(packTextToValue(item.size));
     totalPrice = totalPrice + oneP;
     let CartTotalPrice = document.querySelector('#total2');
     if (CartTotalPrice != null){
@@ -205,12 +232,19 @@ function removeItem(event, item, element){
     element.remove();
     curCart.delete(item);
   }
+  if (cart.length > 0){
+    let index = cart.indexOf(item);
+    cart.splice(index, 1);
+  }
   console.log(curCart);
+  console.log(cart);
+  saveToLocalStorage();
   updateTotalPrice();
 }
 
 //Initialize the cart
 for (let item of curCart) {
+  console.log("init once");
   initCart(item);
 }
 updateTotalPrice();
