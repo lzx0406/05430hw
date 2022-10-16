@@ -141,7 +141,7 @@ function initCartArr(){
 }
 
 let cart = initCartArr();
-console.log("following is cart!!!!!!!!!!!!!!!!!");
+console.log("Following is the current cart array: ");
 console.log(cart);
 
 // Initializing the Roll class for adding to cart
